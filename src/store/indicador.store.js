@@ -4,13 +4,13 @@ import { Grupo } from '../panel/models/grupo.model';
 
 
 
-const TiposInd = {
+export const TiposInd = {
     Numero: 'numero',
     Horas: 'hh:mm',
     Texto: 'texto'
 }
 
-const TiposGrupo = {
+export const TiposGrupo = {
     ambiente: 'gru-01',
     agua: 'gru-02',
     obs: 'gru-03'
@@ -27,8 +27,8 @@ const state = {
         new Indicador('ind-04', 'Temperatura Agua',      23.0,  TiposInd.Numero, 'ºC',   1,     TiposGrupo.agua, '' , new Date()),
         new Indicador('ind-05', 'Cloro Libre Residual',   2.1,  TiposInd.Numero, 'mg/l', 1,     TiposGrupo.agua, '' , new Date()),
         new Indicador('ind-06', 'Turbidez',               2.0,  TiposInd.Numero, 'UNF',  1,     TiposGrupo.agua, '' , new Date()),
-        new Indicador('ind-07', 'Tiempo Recirculación','01:30', TiposInd.Horas, 'hh:mm',5,      TiposGrupo.agua, '' , new Date()),
         new Indicador('ind-08', 'Transparencia',          9.0,  TiposInd.Numero, 'x',    1,     TiposGrupo.agua, '' , new Date()),
+        new Indicador('ind-07', 'Tiempo Recirculación','01:30', TiposInd.Horas, 'hh:mm',5,      TiposGrupo.agua, '' , new Date()),
         new Indicador('ind-09', 'Desinfectante', 'Hipoclorito sódico' ,TiposInd.Texto, '',  1,  TiposGrupo.agua, '' , new Date()),
         new Indicador('ind-10', 'Observaciones', '...' ,        TiposInd.Texto, '',  1,         TiposGrupo.obs, '' , new Date()),
     ],
@@ -42,7 +42,11 @@ const state = {
 
     observaciones: '',
 
-    fecha: new Date()
+    titulo: 'Hospital de XXX',
+
+    fecha: new Date(),
+
+    dark: true,
 };
 
 
@@ -61,6 +65,12 @@ const getIndicadores = () => {
 const getGrupos = () => {
     
     return [...state.grupos];
+
+}
+
+const getTitulo = () => {
+    
+    return state.titulo;
 
 }
 
@@ -159,6 +169,7 @@ export default {
     getIndicadorById,
     getIndicadores,
     getGrupos,
+    getTitulo,
     initStore,
     onIndicadorChanged,
     reloadPage,

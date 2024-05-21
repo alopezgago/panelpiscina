@@ -86,6 +86,7 @@ img {
 
   /* max-width: 600px; */
   box-shadow: 0.1em 0.5em 1em 0.1em rgba(32,32,32,0.3);
+  background:var(--color-fondo-tarjeta);
 
 }
 
@@ -235,7 +236,7 @@ img {
 
 .valor-texto {
   /* font-size: calc(1em + 1.1vw); */
-  font-size: calc(1em + 2vw);
+  font-size: 36px;
   margin-left: 0.5em;
   /* color: var(--color-fuente-valor); */
 }
@@ -275,18 +276,6 @@ img {
   /* color: rgba(198, 252, 6, 0.9); */
 }
 
-.fondo-card-dark{
-  background:rgba(80, 80, 80, 1);
-}
-
-.fondo-nombre-dark{
-  background: rgba(20, 20, 20, 1);
-  color: rgba(198, 252, 6, 0.9);
-}
-.fondo-nombre-claro{
-  background: rgba(255, 255, 255, 1);
-  color: rgba(198, 252, 6, 0.9);
-}
 
 .icono-masmenos {
   width: 4vw;

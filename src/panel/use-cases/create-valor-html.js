@@ -1,6 +1,6 @@
 import indicadorStore from "../../store/indicador.store";
 import { Indicador } from "../models/indicador.model";
-// import { selectClaseCSSByGrupo } from "./sel-class-card";
+// import { selectClaseCSSByGrupo } from "./select-clasesCSS";
 
 
 

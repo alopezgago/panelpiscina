@@ -1,5 +1,6 @@
 import panelStore from "../../store/indicador.store";
 import { Grupo } from "../models/grupo.model";
+import { selectOrigenIconoGrupo } from "./select-origen-iconos";
 
 
 
@@ -11,16 +12,18 @@ import { Grupo } from "../models/grupo.model";
 export const createDivGrupoHTML = ( grupo ) => {
     if (!grupo) throw new Error('Un objeto tipo grupo es requerido');
 
+    const origenIcono = selectOrigenIconoGrupo( grupo.id );
+
     const html = `
-        <!-- contenedor-grupo ${ grupo.id} -->
+        <!-- contenedor de cards de indicadores -grupo ${ grupo.id} -->
             <div>
-                <img src="../assets/icons/aq_indoor_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="Aire" class="img-texto-medio"/>
+                <img src="${ origenIcono }" alt="Aire" class="img-texto-medio"/>
                 <span class="nombre-grupo"> ${ grupo.nombre } </span>
             </div>
-            <div data-id="${ grupo.id }" class="container ${ grupo.id }">
+            <div data-id="${ grupo.id }" class="container-cards ${ grupo.id }">
                 
             </div>
-        <!-- contenedor-grupo ${ grupo.id} FIN-->
+        <!-- contenedor de cards de indicadores ${ grupo.id} FIN-->
     `;
 
     const divElement = document.createElement('Div');
