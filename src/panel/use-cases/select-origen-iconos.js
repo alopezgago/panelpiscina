@@ -22,7 +22,7 @@ export const selectOrigenIconoGrupo = ( grupoId ) => {
             break;
     
         default:
-            origenIcono = ""
+            origenIcono = "../assets/icons/icon-grupo01.svg"
             break;
     }
 

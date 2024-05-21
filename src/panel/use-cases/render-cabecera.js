@@ -1,3 +1,4 @@
+import { formateaFecha, FFecha } from "./index";
 
 
 /**
@@ -7,8 +8,6 @@
  */
 export const renderCabecera = ( titulo = 'Centro XXX', fecha = new Date) => {
 
-    console.log('Hola cabecera');
-
     const html = 
     `<!-- Cabecera-->
     
@@ -17,16 +16,17 @@ export const renderCabecera = ( titulo = 'Centro XXX', fecha = new Date) => {
             </div>
             <div>
                 <h1> [Logo] Panel informativo - Piscina ${ titulo } (En pruebas) </h1>
-                <p> ${ fecha.toLocaleDateString( 'es-ES')} </p>
+                <p> ${ formateaFecha(fecha, FFecha.fechaLocalLarga)} </p>
             </div>
         
    
     <!-- Cabecera FIN -->
     `
- 
+    
     const headerElement = document.createElement('header');
     headerElement.innerHTML = html;
-
+    
+    // Crear el elemento panel
     const panelElement= document.createElement('Div');
     panelElement.classList.add ('panel');
 

@@ -1,11 +1,11 @@
+
 // ARCHIVO BARRIL
-
-
-
-
 export { createCardHTML } from './create-card-html';
 
-export { formatearFecha, FormatosFecha } from './formatear-fecha';
+export { formateaFecha, formateaMinutos, 
+        formateaHHMMaMin, FFecha, FormatosMinutos, 
+        formateaDecValor } from './formatear-datos';
+
 
 export { renderCabecera } from './render-cabecera';
 export { renderDivGrupos } from './render-div-grupos';
@@ -14,7 +14,4 @@ export { renderSpanValor } from './render-span-valor';
 
 
 export { selectOrigenIconoGrupo } from './select-origen-iconos';
-export { selectClaseCSSTarjetaByGrupo } from './select-clasesCSS';
-
-
-
+export { selectClaseCSSBordeCardByGrupo, selectClaseCSSByTipo, selectClaseCSSTemaDark } from './select-clasesCSS';

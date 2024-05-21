@@ -1,7 +1,8 @@
 import { TiposInd } from "../../store/indicador.store";
 import { Indicador } from "../models/indicador.model";
-import { formatearFecha, FormatosFecha } from "./formatear-fecha";
-import { selectClaseCSSTarjetaByGrupo, selectClaseCSSByTipo } from "./select-clasesCSS";
+import { selectClaseCSSBordeCardByGrupo, 
+    selectClaseCSSByTipo, selectClaseCSSTemaDark, formateaFecha, FFecha, 
+    formateaDecValor} from "./index";
 
 
 
@@ -9,24 +10,29 @@ import { selectClaseCSSTarjetaByGrupo, selectClaseCSSByTipo } from "./select-cla
 /**
  * 
  * @param {Indicador} indicador 
+ * @returns {String} contenido HTML para añadir a un elementHTML
  */
 export const createCardHTML = ( indicador ) => {
     if (!indicador) throw new Error('Un objeto tipo indicador es requerido');
 
+    //TODO: revisar el tema de las fechas
+    //formatear valor
+
     // formatear la fecha de actualización
-    const fechaActualizacion = formatearFecha(indicador.updateAt, FormatosFecha.prueba);
-
-    // seleccionar las clases en función del grupo y tipo del indicador
-    const claseCSSborde = selectClaseCSSTarjetaByGrupo(indicador.grupo);
-    const claseCSSspan = selectClaseCSSByTipo (indicador.tipo)
-    const claseFondoCard = 'fondo-card-dark'
+    // const fechaActualizacion = indicador.updateAt;
+    const fechaAct = formateaFecha( new Date(indicador.updateAt), 
+                        FFecha.fyhLocalCorta);
     
-    let html = 
-    `<!-- Datos del indicador ${ indicador.id }-->
-
+    
+    // seleccionar las clases en función del grupo y tipo del indicador
+    const claseCSSborde = selectClaseCSSBordeCardByGrupo(indicador.grupo);
+    const claseCSSspan = selectClaseCSSByTipo (indicador.tipo)
+    const claseFondoCard = selectClaseCSSTemaDark( true );
+    
+    let html = `
     <div class="${ claseCSSspan[1] } "> 
         <span id="valor-${ indicador.id }" data-id="ind-XX" class="${ claseCSSspan[0] } fte-color-dark">
-            ${ indicador.valor}                             
+            ${ indicador.valor }                             
         </span>
     </div>
 
@@ -34,32 +40,34 @@ export const createCardHTML = ( indicador ) => {
         <span id="nombre-${ indicador.id }" class="nombre-indicador fte-color-nombre-cl">    
         ${ indicador.nombre }
         <small>(${ indicador.magnitud })</small>
+        <br>
+        <small>${ indicador.detalle }</small>
         </span>
     </div>
 
     <div class="div-ind-fecha "> 
-        <span class="valor-fechaAct fte-color-aviso">
-            ${ fechaActualizacion }
+        <span id="fechaAct-${ indicador.id }" class="valor-fechaAct fte-color-aviso">
+            ${ fechaAct }
         </span>
     </div>
     `;
     if (indicador.tipo !== TiposInd.Texto) {
         html = html + `
         <div class="div-boton-izda "> 
-            <button id="btnMas-${ indicador.id }" name="btn-${ indicador.id }-mas" class="boton-1 ">
-                <img src="../assets/icons/icon-flecha-down.svg" alt="+" class = "icono-masmenos" />
+            <button id="btnMas_${ indicador.id }" data-id="${ indicador.id }" name="${ indicador.id }-mas" class="btnMas boton-1">
+            +
             </button>
         </div>
         <div class="div-boton-dcha ">
-            <button id="btnMenoss-${ indicador.id }" name="btn-${ indicador.id }-menos" class="boton-1">
-                <img src="../assets/icons/icon-flecha-up.svg" alt="-" class = "icono-masmenos" />
+            <button id="btnMenos_${ indicador.id }" data-id="${ indicador.id }" name="${ indicador.id }-menos" class=" btnMenos boton-1">
+            -
             </button>
-        </div>  
-           
-        `;     
-    };
-
-    html = html + `<!-- Datos del indicador  ${ indicador.id } FIN-->`
+            </div>  
+            
+            `;     
+        };
+        // <img src="../assets/icons/icon-flecha-down.svg" alt="+" class = "icono-masmenos" />
+        // <img src="../assets/icons/icon-flecha-up.svg" alt="-" class = "icono-masmenos" />
 
     // La tarjeta del indicador tiene 2 DIVs para combinar un FLEX y un GRID
     // creamos el primer DIV item que contendra el GRID de la tarjeta del indicador

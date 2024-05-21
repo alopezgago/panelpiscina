@@ -20,7 +20,7 @@ export const createDivGrupoHTML = ( grupo ) => {
                 <img src="${ origenIcono }" alt="Aire" class="img-texto-medio"/>
                 <span class="nombre-grupo"> ${ grupo.nombre } </span>
             </div>
-            <div data-id="${ grupo.id }" class="container-cards ${ grupo.id }">
+            <div id="${ grupo.id }" data-id="${ grupo.id }" class="container-cards ${ grupo.id }">
                 
             </div>
         <!-- contenedor de cards de indicadores ${ grupo.id} FIN-->

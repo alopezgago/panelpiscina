@@ -1,8 +1,12 @@
 import { TiposInd, TiposGrupo } from "../../store/indicador.store";
 
 
-
-export const selectClaseCSSTarjetaByGrupo = ( grupo ) => {
+/**
+ * 
+ * @param {String} grupo 
+ * @returns 
+ */
+export const selectClaseCSSBordeCardByGrupo = ( grupo ) => {
 
     let claseCSS = '';
     
@@ -31,7 +35,7 @@ export const selectClaseCSSTarjetaByGrupo = ( grupo ) => {
 
 /**
  * 
- * @param {*} tipo 
+ * @param {String} tipo 
  * @returns {Array(String)} devuelve 2 clases, para el valor y para el item GRID
  */
 export const selectClaseCSSByTipo = ( tipo ) => {
@@ -61,4 +65,23 @@ export const selectClaseCSSByTipo = ( tipo ) => {
 
 }
 
+/**
+ * Devuelve las clases CSS en función de si el tema es 'dark' o normal
+ * 
+ * @param {Boolean} dark true | false 
+ * @returns {String} string con clase CSS
+ */
 
+export const selectClaseCSSTemaDark = ( dark = true ) => {
+
+    let claseCSS = '';
+
+    if (dark) {
+        claseCSS = 'fondo-card-dark';
+    } else {
+        claseCSS = 'fondo-card-claro';
+    };
+
+
+    return claseCSS;
+}

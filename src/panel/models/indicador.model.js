@@ -11,8 +11,9 @@ export class Indicador {
      * @param {String} magnitud unidad de medida del indicador
      * @param {Number} paso unidad para incrementar/decrementar el valor
      * @param {String} grupo Ambiental | Agua
-     * @param {String} detalle Subtitulo o detalle del indicador
      * @param {Date} updateAt Fecha de actualización
+     * @param {String} detalle Subtitulo o detalle del indicador
+     * @param {Number} decimales Numero de decimales a mostrar
      */
     constructor(id = 'ind-00', 
                 nombre='Indicador', 
@@ -21,8 +22,10 @@ export class Indicador {
                 magnitud = 'mmm', 
                 paso = 1, 
                 grupo ='Grupo ND',
+                updateAt = new Date(),
                 detalle = '',
-                updateAt = new Date()) {
+                decimales = undefined,
+            ) {
         
 
         this.id = id;
@@ -33,8 +36,9 @@ export class Indicador {
         this.magnitud = magnitud;
         this.grupo = grupo;
         this.paso = paso;
-        this.detalle = detalle;
         this.updateAt = updateAt;
+        this.detalle = detalle;
+        this.decimales = decimales;
 
     }
 

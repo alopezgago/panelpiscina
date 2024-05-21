@@ -1,15 +1,17 @@
 
 import html from './presentaciones/app.html?raw';
 import { Indicador } from './models/indicador.model';
-import { renderCabecera, renderCardIndicadores, renderDivGrupos, renderSpanValor } from './use-cases/index';
+import { formateaMinutos, FormatosMinutos, renderCabecera, renderDivGrupos, renderSpanValor } from './use-cases/index';
 import panelStore from '../store/indicador.store';
 
 
 
-const ElementIDs = {
+const ElementsID = {
     panel: '.panel',
     contenedorCards: '.container',
     spanValor: 'span-valor-',
+    botones: '.boton-1',
+    botonesMas: '.btnMas',
 
 }
 
@@ -20,39 +22,18 @@ const ElementIDs = {
 export const App = ( elementId ) => {
 
     const displayCabecera = () => {
+
         const titulo = panelStore.getTitulo();
         renderCabecera( titulo , new Date());
     }
 
-    //Para dibujar los containers que tendrán los grupos de indicadores
     const displayGrupos = () => {
+
         const grupos = panelStore.getGrupos(); // todos los grupos
-
-        renderDivGrupos ( ElementIDs.panel, grupos);        
-    }
-
-
-    const displayIndicadores = () => {
         const indicadores = panelStore.getIndicadores(); // todos los indicadores
 
-        renderCardIndicadores( indicadores );
-
+        renderDivGrupos ( ElementsID.panel, grupos, indicadores);        
     }
-
-
-    const displayValor = ( idIndicador = 'ind-01', valor = 20.1 ) => {
-        const indicador = panelStore.getIndicadorById(  idIndicador );
-        //obtener el data-id del elemento a partir del id del indicador
-
-        const idSpan = `${ElementIDs.spanValor}${indicador.id}`;
-
-        renderSpanValor( idSpan, valor );
-
-
-    }
-    
-
-    
     
     // Cuando la función App() se llama
     ( ()=>{
@@ -62,16 +43,35 @@ export const App = ( elementId ) => {
 
 
         displayCabecera();
-        
         displayGrupos();
-
-        displayIndicadores();
-        // renderIndicadores();
-
-        // displayValor('ind-02', 200);
 
         
     })();
+
+
+        // Referencias HTML
+        const btnTodos = document.querySelectorAll( ElementsID.botones );
     
+        // Añadir Listeners una vez renderizado el html
     
+        btnTodos.forEach( btn => {
+            
+            
+            btn.addEventListener( 'click', ( event ) =>{
+                const btnMasoMenos = btn.getAttribute('class');
+                const idInd = btn.getAttribute('data-id');
+
+                (btn.classList.contains("btnMas")) ? 1 : -1 
+
+                renderSpanValor( idInd, 
+                    panelStore.actualizaValor(idInd,(btn.classList.contains("btnMas")) ? 1 : -1 
+                     ))
+                
+            })
+        });
+        
 }
+
+
+
+    
