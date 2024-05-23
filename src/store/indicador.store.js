@@ -21,7 +21,7 @@ const state = {
     indicadores: [
         new Indicador('ind01', 'Temperatura',            24.1,        TiposInd.Numero, 'ºC',    0.1,  TiposGrupo.ambiente, new Date(),'',1 ),
         new Indicador('ind02', 'Humedad relativa',       23.0,        TiposInd.Numero, '%',     0.1,  TiposGrupo.ambiente, new Date(),'',1 ),
-        new Indicador('ind03', 'Calidad Aire',          452.0,        TiposInd.Numero, 'ppm',     1,  TiposGrupo.ambiente, new Date(),'Concentración CO2',0),
+        new Indicador('ind03', 'Calidad Aire',          452.0,        TiposInd.Numero, 'ppm',     1,  TiposGrupo.ambiente, new Date(),'',0),
         new Indicador('ind04', 'Temperatura Agua',       23.0,        TiposInd.Numero, 'ºC',    0.1,  TiposGrupo.agua,     new Date(),'',1 ),
         new Indicador('ind05', 'Cloro Libre Residual',    2.1,        TiposInd.Numero, 'mg/l',  0.1,  TiposGrupo.agua,     new Date(),'',1 ),
         new Indicador('ind06', 'Turbidez',                2.0,        TiposInd.Numero, 'UNF',   0.1,  TiposGrupo.agua,     new Date(),'',1 ),
@@ -151,9 +151,9 @@ const getIndicadorById = ( idInd ) => {
  * @param {Number(-1,1)} factor para sumar (1) o para restar (-1) el paso
  * @returns {String} resultado de la actualización
  */
-const actualizaValor = ( id, factor = 1, paso ) => {
-    if (!id) throw new Error ('Store (actualizaValor): El id del indicador es necesario');
-    if( paso && isNaN(paso*1)) throw new Error ('Store (actualizaValor): El paso debe ser númerico');
+const incrementaValor = ( id, factor = 1, paso ) => {
+    if (!id) throw new Error ('Store (incrementaValor): El id del indicador es necesario');
+    if( paso && isNaN(paso*1)) throw new Error ('Store (incrementaValor): El paso debe ser númerico');
     
     // obtenemos el indicador   
     let indicador = getIndicadorById( id );
@@ -164,7 +164,7 @@ const actualizaValor = ( id, factor = 1, paso ) => {
     switch (indicador.tipo) {
         case TiposInd.Numero:
             if(typeof(indicador.valor) != 'number') 
-                throw new Error('Método de Store (actualizaValor): El valor debe ser un número si el tipo es número');
+                throw new Error('Método de Store (incrementaValor): El valor debe ser un número si el tipo es número');
                 
                 //TODO: OJO¡¡ PROBLEMA CON LA PRECISIÓN DE LOS DECIMALES
                 
@@ -269,7 +269,7 @@ const getTitulo = () => {
 
 
 export default {
-    actualizaValor,
+    incrementaValor,
     addIndicador,
     deleteIndicador,
     getGrupos,

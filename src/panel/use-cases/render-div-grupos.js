@@ -20,7 +20,7 @@ export const renderDivGrupos = ( elementId, grupos = [], indicadores = [] ) => {
         
         if (!element) 
             throw new Error ('(renderDivGrupos): El elemento HTML no se ha encontrado o no existe');
-
+        
 
         grupos.forEach( grupo  => { 
             

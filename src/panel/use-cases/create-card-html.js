@@ -16,6 +16,7 @@ export const createCardHTML = ( indicador ) => {
     if (!indicador) throw new Error('Un objeto tipo indicador es requerido');
 
     //TODO: revisar el tema de las fechas
+    //TODO: Optimizar DOM
     //formatear valor
 
     // formatear la fecha de actualización
@@ -26,48 +27,84 @@ export const createCardHTML = ( indicador ) => {
     
     // seleccionar las clases en función del grupo y tipo del indicador
     const claseCSSborde = selectClaseCSSBordeCardByGrupo(indicador.grupo);
-    const claseCSSspan = selectClaseCSSByTipo (indicador.tipo)
     const claseFondoCard = selectClaseCSSTemaDark( true );
     
-    let html = `
-    <div class="${ claseCSSspan[1] } "> 
-        <span id="valor-${ indicador.id }" data-id="ind-XX" class="${ claseCSSspan[0] } fte-color-dark">
-            ${ indicador.valor }                             
-        </span>
+    let html = '';
+
+    if (indicador.tipo !== TiposInd.Texto) { // si no tipo Texto (va con botones)
+    html = 
+     `
+    <div contenteditable="true"
+        id="valor-${ indicador.id }" 
+        data-id="${ indicador.id }" 
+        data-value="${ indicador.valor }" 
+        class="div-ind-num-valor format-ind-valor divValor-${ indicador.tipo }" 
+        pattern='([0-9.,\-]*\.)?[0-9]+).*/g'
+    >         
+          ${ indicador.valor }
+      
     </div>
 
-    <div class="div-ind-nombre fondo-nombre-dark" > 
-        <span id="nombre-${ indicador.id }" class="nombre-indicador fte-color-nombre-cl">    
+    <div id="nombre-${ indicador.id }"  
+         data-id="${ indicador.id }"
+         class="div-ind-nombre format-ind-nombre tema-oscuro"  
+    >
         ${ indicador.nombre }
         <small>(${ indicador.magnitud })</small>
-        <br>
+        <br>    
         <small>${ indicador.detalle }</small>
-        </span>
+        
     </div>
 
-    <div class="div-ind-fecha "> 
-        <span id="fechaAct-${ indicador.id }" class="valor-fechaAct fte-color-aviso">
-            ${ fechaAct }
-        </span>
+    <div id="fechaAct-${ indicador.id }" 
+        class="div-ind-fecha valor-fechaAct fte-color-aviso"
+    > 
+         ${ fechaAct }
     </div>
+    <div class="div-boton-izda "> 
+        <button id="btnMas_${ indicador.id }" data-id="${ indicador.id }" name="${ indicador.id }-mas" class="btnMas boton-1">
+        +
+        </button>
+    </div>
+    <div class="div-boton-dcha ">
+        <button id="btnMenos_${ indicador.id }" data-id="${ indicador.id }" name="${ indicador.id }-menos" class=" btnMenos boton-1">
+        -
+        </button>
+    </div>  
     `;
-    if (indicador.tipo !== TiposInd.Texto) {
-        html = html + `
-        <div class="div-boton-izda "> 
-            <button id="btnMas_${ indicador.id }" data-id="${ indicador.id }" name="${ indicador.id }-mas" class="btnMas boton-1">
-            +
-            </button>
-        </div>
-        <div class="div-boton-dcha ">
-            <button id="btnMenos_${ indicador.id }" data-id="${ indicador.id }" name="${ indicador.id }-menos" class=" btnMenos boton-1">
-            -
-            </button>
-            </div>  
-            
-            `;     
-        };
         // <img src="../assets/icons/icon-flecha-down.svg" alt="+" class = "icono-masmenos" />
         // <img src="../assets/icons/icon-flecha-up.svg" alt="-" class = "icono-masmenos" />
+    } else { // si es tipo texto (sin botones y con input)
+        html = 
+        `
+        <div class="div-ind-txt-valor "> 
+            <input  
+                data-id="${ indicador.id }" 
+                type="text" 
+                class="input-obs2" 
+                value="${ indicador.valor }" 
+                />
+        </div>   
+        <div id="nombre-${ indicador.id }"  
+            data-id="${ indicador.id }"
+            class="div-ind-nombre format-ind-nombre tema-oscuro"  
+        >
+            ${ indicador.nombre }
+            <small>${ indicador.magnitud }</small>
+            <br>    
+            <small>${ indicador.detalle }</small>
+        </div>
+
+        <div 
+            class="div-ind-fecha fte-color-aviso" 
+            id="fechaAct-${ indicador.id }" 
+        >
+                ${ fechaAct }
+        </div>
+        `;
+
+    };
+    
 
     // La tarjeta del indicador tiene 2 DIVs para combinar un FLEX y un GRID
     // creamos el primer DIV item que contendra el GRID de la tarjeta del indicador

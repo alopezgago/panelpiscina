@@ -1,0 +1,97 @@
+
+
+const TiposEntrada = {
+    digit2dec1: 'nn.n',
+    digit3dec2: 'nnn.nn',
+    hhmm:       'hh.mm',
+    hh24mm:     'hh.mm24',
+};
+
+
+
+/**
+ * Valida si un string cumple los patrones ExpReg definidos (que sea numérico, tipo hora)
+ * @param {String} entrada valor a evaluar 
+ * @param {TiposEntrada} tipo  'nn.nn' | 'nnn.nn' | 'hh.mm' | 'hh.mm24'
+ * @returns {Boolean}
+ */
+export const validarEsNumeroRE = ( entrada, tipo = 'nn.n' ) => {
+
+    if(!entrada) return false;
+
+    let regex;
+
+    switch (tipo) {
+        case TiposEntrada.digit2dec1:
+              // Deben ser solo números, máximo 4 digitos, con punto decimal si lo hay
+              // Ejemplo: 99.09 | 1.304 | 341.4 | 4442 | 22.1 etc
+            regex = /^(-?[0-9]{1,2})([.][0-9]{1,1})?$/;
+            
+            break;
+        case TiposEntrada.digit3dec2:
+              //  Deben ser solo números, máximo 5 digitos, con punto decimal si lo hay
+              // Ejemplo: 999.09 |  |  | 55555 | 22.1 etc
+            regex = /^(-?[0-9]{1,3}?)([.]?[0-9]{1,2}?)?$/;
+            
+            break;
+        case TiposEntrada.hhmm: 
+            // Debe ser solo números en formato HH:MM. Horas > 0 y <= 99 . Minutos < 60.
+            // Ejemplo: 12:09 | 36:59 | 
+            regex = /^([0-9]?\d|2[0-9]):([0-5]\d)$/;
+            
+            break;
+        case TiposEntrada.hhmm24:
+            // Debe ser solo números en formato HH:MM.  Horas < 24. Minutos < 60. Horas Sí
+            // Ejemplo: 12:09 | 36:59 | 
+            regex = /^([01]?\d|2[0-3]):([0-5]\d)$/;
+            
+            break;
+            
+        default:
+            throw new Error ('Tipo no definido');
+    }
+    return regex.test(entrada);
+
+};
+
+
+
+
+
+/**
+ * 
+ *  Valida la entrada de teclado para que solo sean números, teclas especiales, punto, etc.
+ * @param {String} teclaKey tecla pulsada (event.Key)
+ * @param {String} texto donde se comprobará que solo haya un punto / tecla especial
+ * @returns {Boolean}
+ */
+export const validaTeclaNumero = ( teclaKey , texto = '' ) => {
+
+    const permitidas = [
+        'Backspace', 'Delete', 'Escape', 'Tab',
+        'End','Home','ArrowLeft','ArrowUp','ArrowRight','ArrowDown',                    
+        '0','1','2','3','4','5','6','7','8','9',
+        '.', '-', ',',
+        ];
+
+    // revisa solo haya un punto
+    if (teclaKey === '.' && texto.trim().includes('.')) {
+        return false;
+    }
+    // revisa solo haya un signo menos
+    if (teclaKey === '-' && texto.trim().includes('-')) {
+        return false;
+    }
+    // // revisa solo haya :
+    // if (teclaKey === ':' && texto.trim().includes(':')) {
+    //     return false;
+    // }
+    
+    if (!permitidas.includes(teclaKey)) {
+        return false;
+    }
+
+    return true;
+
+};
+

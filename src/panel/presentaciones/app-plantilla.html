@@ -18,294 +18,461 @@
         <span class="nombre-grupo"> Datos Ambientales</span>
     </div>
     <div class="container">
- 
-        <div class="card tarjeta-borde-ambiente">         <!-- tarjeta 1.1 -->
-            <div class="card-body">
-                <div class="botonera">
-                    <button id="btnMasInd3" name="btn-ind-3-mas" class="btnMas valor-numero boton-1">
-                        <img src="../assets/icons/keyboard_arrow_up_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="+"  class = "icono-masmenos" />
-                    </button>
-                </div>
-                <div>
-                    <span class="valor-num">
-                        24.0
-                    </span>
-                </div>
-                <div class="botonera">
-                    <button id="btnMinusInd3" name="btn-ind-3-minus" class="btnMinus valor-numero boton-1">
-                    <img src="../assets/icons/keyboard_arrow_down_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="-"  class = "icono-masmenos" />
-                    </button>
-                </div>
-            </div>
-            <div class="card-header">
-                <span class="nombre-indicador">
-                    Temperatura
-                    <small>(ºC)</small>
-                </span>
-            </div>
-                <p></p>
-        </div>        <!-- tarjeta 1.1  FIN-->
 
-        <div class="card card   tarjeta-borde-ambiente">         <!-- tarjeta 1.2 -->
-            <div class="card-body">
-                <div class="botonera">
-                    <button id="btnMasInd3" name="btn-ind-3-mas" class="btnMas valor-numero boton-1">
-                     <img src="../assets/icons/keyboard_arrow_up_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="+"  class = "icono-masmenos" />
-                    </button>
-                </div>
-                <div>
-                    <span class="valor-num">
-                        23.0
-                    </span>
-                </div>
-                <div class="botonera">
-                    <button id="btnMinusInd3" name="btn-ind-3-minus" class="btnMinus valor-numero boton-1">
-                      <img src="../assets/icons/keyboard_arrow_down_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="-"  class = "icono-masmenos" />
-                    </button>
-                </div>
-            </div>
-            <div class="card-header ">
-                <span class="nombre-indicador ">
-                    Humedad relativa
-                    <small>(%)</small>
-                </span>
-            </div>
-                <p></p>
-        </div>        <!-- tarjeta 1.2 FIN -->
-
-        <div class="card card tarjeta-borde-ambiente">         <!-- tarjeta 1.3 -->
-            <div class="card-body">
-                <div class="botonera">
-                    <button id="btnMasInd3" name="btn-ind-3-mas" class="btnMas valor-numero boton-1">
-                        <img src="../assets/icons/keyboard_arrow_up_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="+"  class = "icono-masmenos" />
-                    </button>
-                </div>
-                <div>
-                    <span class="valor-num">
-                        452.0
-                    </span>
-                </div>
-                <div class="botonera">
-                    <button id="btnMasInd3" name="btn-ind-3-mas" class="btnMas valor-numero boton-1">
-                        <img src="../assets/icons/keyboard_arrow_down_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="-"  class = "icono-masmenos" />
-                    </button>
-                </div>
-            </div>
-
-            <div class="card-header">
-                <span class="nombre-indicador">
-                    Calidad del Aire
-                    <small>Concentración CO2 (ppm)</small>
-                </span>
-            </div>
-                <p></p>
-        </div>        <!-- tarjeta 1.3 FIN -->
-            
-
-    </div>        <!-- Contenedor 1 FIN -->
-
-    <div>
-        <img src="../assets/icons/water_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="Agua" class="img-texto-medio"/>
-        <span class="nombre-grupo">Datos del Agua</span>
-    </div>
-    <div class="container  ">
+  
+   <!-- contenedor-grupo 1 ${ grupo.id} -->
+   <div>
+    <img src="../assets/icons/icon-grupo01.svg" alt="Aire" class="img-texto-medio"/>
+    <span class="nombre-grupo">Datos Ambientales </span>
+  </div>
+  <div data-id="gru-XX" class="container-cards GRUPO-ID">
+    <!-- Prueba Tarjeta 1.2-->
+    <div class="card flex-card tarjeta-borde-ambiente">     <!-- tarjeta 1.2 -->
+      <div class="grid-tarjeta flex-tarjeta-item "> 
         
-        <div class="card card   tarjeta-borde-agua"> <!-- tarjeta 2.1 -->
-            <div class="card-body">
-                <div class="botonera">
-                    <button id="btnMasInd3" name="btn-ind-3-mas" class="btnMas valor-numero boton-1">
-                    <img src="../assets/icons/keyboard_arrow_up_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="+"  class = "icono-masmenos" />
-                    </button>
-                </div>
-                <div>
-                    <span class="valor-num">
-                        24.0
-                    </span>
-                </div>
-                <div class="botonera">
-                    <button id="btnMinusInd3" name="btn-ind-3-minus" class="btnMinus valor-numero boton-1">
-                        <img src="../assets/icons/keyboard_arrow_down_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="-"  class = "icono-masmenos" />
-                    </button>
-                </div>
-            </div>
-            <div class="card-header">
-                <span class="nombre-indicador">
-                    Temperatura Vaso Agua
-                </span>
-                <small>(ºC)</small>
-            </div>
-        </div>        <!-- tarjeta 2.1  FIN-->
-
-        <div class="card tarjeta-borde-agua">         <!-- tarjeta 2.2 -->
-            <div class="card-body">
-                <div class="botonera">
-                    <button id="btnMasInd3" name="btn-ind-3-mas" class="btnMas valor-numero boton-1">
-                    <img src="../assets/icons/keyboard_arrow_up_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="+"  class = "icono-masmenos" />
-                    </button>
-                </div>
-                <div>
-                    <span class="valor-num">
-                        2.0
-                    </span>
-                </div>
-                <div class="botonera">
-                    <button id="btnMinusInd3" name="btn-ind-3-minus" class="btnMinus valor-numero boton-1">
-                    <img src="../assets/icons/keyboard_arrow_down_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="-"  class = "icono-masmenos" />
-                    </button>
-                </div>
-            </div>
-            <div class="card-header">
-                <span class="nombre-indicador">
-                    Cloro Libre Residual
-                </span>
-                <small>(mg/l)</small>
-            </div>
-        </div>        <!-- tarjeta 2 FIN -->
-
-        <div class="card card   tarjeta-borde-agua">         <!-- tarjeta 2.3 -->
-            <div class="card-body">
-                <div class="botonera">
-                    <button id="btnMasInd3" name="btn-ind-3-mas" class="btnMas valor-numero boton-1">
-                    <img src="../assets/icons/keyboard_arrow_up_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="+"  class = "icono-masmenos" />
-                    </button>
-                </div>
-                <div>
-                    <span class="valor-num">
-                        2.0
-                    </span>
-                </div>
-                <div class="botonera">
-                    <button id="btnMinusInd3" name="btn-ind-3-minus" class="btnMinus valor-numero boton-1">
-                    <img src="../assets/icons/keyboard_arrow_down_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="-"  class = "icono-masmenos" />
-                    </button>
-                </div>
-            </div>
-            <div class="card-header">
-                <span class="nombre-indicador">
-                    Turbidez
-                    <small>(UNF)</small>
-                </span>
-            </div>
-        </div>        <!-- tarjeta 2.3 FIN -->
-
-
-        <div class="card card   tarjeta-borde-agua">         <!-- tarjeta 2.4 -->
-            <div class="card-body">
-                <div class="botonera">
-                    <button id="btnMasInd3" name="btn-ind-3-mas" class="btnMas valor-numero boton-1">
-                        <img src="../assets/icons/keyboard_arrow_up_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="+"  class = "icono-masmenos" />
-                    </button>
-                </div>
-                <div>
-                    <span class="valor-num">
-                        5.0
-                    </span>
-                </div>
-                <div class="botonera">
-                    <button id="btnMinusInd3" name="btn-ind-3-minus" class="btnMinus valor-numero boton-1">
-                    <img src="../assets/icons/keyboard_arrow_down_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="-"  class = "icono-masmenos" />
-                    </button>
-                </div>
-            </div>
-            <div class="card-header">
-                <span class="nombre-indicador">
-                    Ph
-                    <small>(unidades de Ph)</small>
-                </span>
-            </div>
-        </div>        <!-- tarjeta 2.4 FIN -->
-
-        <div class="card tarjeta-borde-agua">         <!-- tarjeta 2.5 -->
-            <div class="card-body">
-                <div class="botonera">
-                    <button id="btnMasInd3" name="btn-ind-3-mas" class="btnMas valor-numero boton-1">
-                    <img src="../assets/icons/keyboard_arrow_up_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="+"  class = "icono-masmenos" />
-                    </button>
-                </div>
-                <div>
-                    <span class="valor-num">
-                        122.0
-                    </span>
-                </div>
-                <div class="botonera">
-                    <button id="btnMinusInd3" name="btn-ind-3-minus" class="btnMinus valor-numero boton-1">
-                    <img src="../assets/icons/keyboard_arrow_down_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="-"  class = "icono-masmenos" />
-                    </button>
-                </div>
-            </div>
-            <div class="card-header ">
-                <span class="nombre-indicador">
-                    Transparencia
-                    <small>(x)</small>
-                </span>
-            </div>
-        </div>        <!-- tarjeta 2.5 FIN -->
-
-        <div class="card tarjeta-borde-agua">         <!-- tarjeta 2.6 -->
-            <div class="card-body">
-                <div class="botonera">
-                    <button id="btnMasInd13" name="btn-ind-13-mas" class="boton-1">
-                    <img src="../assets/icons/keyboard_arrow_up_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="+"  class = "icono-masmenos" />
-                    </button>
-                </div>
-                <div>
-                    <span class="valor-num">
-                        01:30
-                    </span>
-                </div>
-                <div class="botonera">
-                    <button id="btnMinusInd13" name="btn-ind-13-minus" class="boton-1">
-                    <img src="../assets/icons/keyboard_arrow_down_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="-"  class = "icono-masmenos" />
-                    </button>
-                </div>
-            </div>
-            <div class="card-header">
-                <span class="nombre-indicador">
-                    Tiempo recirculación
-                    <small>(horas)</small>
-                </span>
-            </div>
-        </div>        <!-- tarjeta 2.6 FIN -->
-
-        <div class="card c-ancho-2 tarjeta-borde-agua">         <!-- tarjeta 2.7 -->
-            <div class="card-body tipo-texto">
-                <span class="valor-texto">
-                    Hipoclorito sódico
-                </span>
-            </div>
-            <div class="card-header">
-                <span class="nombre-indicador">
-                    Desinfectante
-                </span>
-                <small></small>
-            </div>
-        </div>        <!-- tarjeta 2.7 FIN -->
-        
-    </div>        <!-- Contenedor 2 FIN -->
-
-    <!-- contenedor-grupo 3 -->
-    <div>
-        <img src="../assets/icons/info_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="Aire" class="img-texto-medio"/>
-        <span class="nombre-grupo"> Observaciones</span>
-    </div>
-    <div class="container">
- 
-        <div class="card tarjeta-borde-blanco">         <!-- tarjeta 3.1 -->
-            <div class="card-body tipo-texto">
-                <span class="valor-texto">
-                    Notas
-                </span>
-            </div>
-            <div class="card-header">
-                <span class="nombre-indicador">
-               
-                </span>
-                <small></small>
-            </div>
-                <p></p>
-        </div>        <!-- tarjeta 3.1  FIN-->
+        <div class="div-ind-num-valor "> 
+            <label for="fname" class="nombre-indicador" > Temperatura </label>
+            <input  id="xxx"
+                    data-id="${ indicador.id }" 
+                    type="number" 
+                    class="input-numero valor-num fte-color-dark" 
+                    value="23.1" 
+                    min="-30" 
+                    max="+50" 
+                    size="3" 
+                    maxlength="3"
+                    step="0.5" 
+            >
             
-    </div>        <!-- Contenedor 3 FIN -->
+           <!-- <span id="valor-ind-XX" data-id="ind-XX" class="valor-num fte-color-dark">
+            523.1                                
+          </span> -->
+        </div>
+
+
+
+        <div class="div-ind-fecha "> 
+          <span class="valor-fechaAct fte-color-aviso">18/05/2024</span>
+        </div>
+
+
+      </div> 
+    </div>    <!-- tarjeta 1.1 FIN-->
+    <!-- Prueba Tarjeta 1.1 FIN -->
+       <!-- Prueba Tarjeta 1.2-->
+       <div class="card flex-card tarjeta-borde-ambiente">     <!-- tarjeta 1.2 -->
+        <div class="grid-tarjeta flex-tarjeta-item flex-tarjeta-item"> 
+          
+          <div class="div-ind-txt-valor "> 
+            <label for="fname" class="nombre-indicador" > Temperatura </label>
+            <input  id="xxx"
+                    data-id="${ indicador.id }" 
+                    type="text" 
+                    inputmode="numeric" 
+                    pattern="[0-9]*"
+                    class="input-numero valor-num fte-color-dark" 
+                    value="23.1" 
+                    min="-30" 
+                    max="+50" 
+                    size="3" 
+                    maxlength="3"
+                    step="0.5" 
+            >
+             <!-- <span id="valor-ind-XX" data-id="ind-XX" class="valor-num fte-color-dark">
+              23.1                                
+            </span> -->
+          </div>
+<!--   
+          <div class="div-ind-nombre " > 
+            <span id="nombre-ind-XX" class="nombre-indicador fte-color-nombre-cl">    
+              Humedad relativa 
+              <small>(%)</small>
+            </span>
+          </div>
+   -->
+          <div class="div-ind-fecha "> 
+            <span class="valor-fechaAct fte-color-aviso">18/05/2024</span>
+          </div>
+  
+          <!-- <div class="div-boton-izda "> 
+            <button id="btnMas-ind-XX" name="btn-ind-3-mas" class="boton-1 ">
+              <img src="../assets/icons/icon-flecha-down.svg" alt="+" class = "icono-masmenos" />
+            </button>
+          </div>
+          <div class="div-boton-dcha ">
+            <button id="btnMinus-id-" name="btn" class="boton-1 ">
+              <img src="../assets/icons/icon-flecha-up.svg" alt="-" class = "icono-masmenos" />
+            </button>
+          </div> -->
+
+        </div> 
+      </div>    <!-- tarjeta 1.2 FIN-->
+      <!-- Prueba Tarjeta 1.2 FIN -->
+  
+
+     <!-- Prueba Tarjeta 1.3-->
+     <div class="card flex-card tarjeta-borde-ambiente">     <!-- tarjeta 1.3 -->
+      <div class="grid-tarjeta flex-tarjeta-item "> 
+        
+        <div class="div-ind-num-valor "> 
+           <span id="valor-ind-XX" data-id="ind-XX" class="valor-num fte-color-dark">
+            524.1                                
+          </span>
+        </div>
+
+        <div class="div-ind-nombre " > 
+          <span id="nombre-ind-XX" class="nombre-indicador fte-color-nombre-cl">    
+            Calidad del Aire 
+            <small>(ppm)</small>
+            <br>
+            <small>(Concentración de CO<sub>2</sub>)</small>
+          </span>
+        </div>
+
+        <div class="div-ind-fecha "> 
+          <span class="valor-fechaAct fte-color-aviso">18/05/2024</span>
+        </div>
+
+        <div class="div-boton-izda "> 
+          <button id="btnMas-ind-XX" name="btn-ind-3-mas" class="boton-1 ">
+            <img src="../assets/icons/icon-flecha-down.svg" alt="+" class = "icono-masmenos" />
+          </button>
+        </div>
+        <div class="div-boton-dcha ">
+          <button id="btnMinus-id-" name="btn" class="boton-1 ">
+            <img src="../assets/icons/icon-flecha-up.svg" alt="-" class = "icono-masmenos" />
+          </button>
+        </div>
+
+      </div> 
+    </div>    <!-- tarjeta 1.3 FIN-->
+    <!-- Prueba Tarjeta 1.3 FIN -->
+  </div>    <!-- Contenedor 1 FIN -->
+
+
+
+
+   <!-- contenedor-grupo 2 ${ grupo.id} -->
+   <div>
+    <img src="../assets/icons/icon-grupo02.svg" alt="Aire" class="img-texto-medio"/>
+    <span class="nombre-grupo">Datos del Agua </span>
+  </div>
+  <div data-id="gru-XX" class="container-cards GRUPO-ID}">
+    <!-- Prueba Tarjeta 2.1-->
+    <div class="card flex-card tarjeta-borde-agua">     <!-- tarjeta 2.1 -->
+      <div class="grid-tarjeta flex-tarjeta-item "> 
+        
+        <div class="div-ind-num-valor "> 
+           <span id="valor-ind-XX" data-id="ind-XX" class="valor-num fte-color-dark">
+            24.1                                
+          </span>
+        </div>
+
+        <div class="div-ind-nombre " > 
+          <span id="nombre-ind-XX" class="nombre-indicador fte-color-nombre-cl">    
+            Temperatura del Vaso H<sub>2</sub>O
+            <small>(ºC)</small>
+          </span>
+        </div>
+
+        <div class="div-ind-fecha "> 
+          <span class="valor-fechaAct fte-color-aviso">18/05/2024</span>
+        </div>
+
+        <div class="div-boton-izda "> 
+          <button id="btnMas-ind-XX" name="btn-ind-3-mas" class="boton-1 ">
+            <img src="../assets/icons/icon-flecha-down.svg" alt="+" class = "icono-masmenos" />
+          </button>
+        </div>
+        <div class="div-boton-dcha ">
+          <button id="btnMinus-id-" name="btn" class="boton-1 ">
+            <img src="../assets/icons/icon-flecha-up.svg" alt="-" class = "icono-masmenos" />
+          </button>
+        </div>
+
+      </div> 
+    </div>    <!-- tarjeta 2.1 FIN-->
+    <!-- Prueba Tarjeta 2.1 FIN -->
+       <!-- Prueba Tarjeta 2.2-->
+       <div class="card flex-card tarjeta-borde-agua">     <!-- tarjeta 2.2 -->
+        <div class="grid-tarjeta flex-tarjeta-item "> 
+          
+          <div class="div-ind-num-valor "> 
+             <span id="valor-ind-XX" data-id="ind-XX" class="valor-num fte-color-dark">
+              2.1                                
+            </span>
+            
+          </div>
+  
+          <div class="div-ind-nombre " > 
+            <span id="nombre-ind-XX" class="nombre-indicador fte-color-nombre-cl">    
+              Cloro Libre Residual 
+              <small>(mg/l)</small>
+            </span>
+          </div>
+  
+          <div class="div-ind-fecha "> 
+            <span class="valor-fechaAct fte-color-aviso">18/05/2024</span>
+          </div>
+  
+          <div class="div-boton-izda "> 
+            <button id="btnMas-ind-XX" name="btn-ind-3-mas" class="boton-1 ">
+              <img src="../assets/icons/icon-flecha-down.svg" alt="+" class = "icono-masmenos" />
+            </button>
+          </div>
+          <div class="div-boton-dcha ">
+            <button id="btnMinus-id-" name="btn" class="boton-1">
+              <img src="../assets/icons/icon-flecha-up.svg" alt="-" class = "icono-masmenos" />
+            </button>
+  
+          </div>
+        </div> 
+      </div>    <!-- tarjeta 2.2 FIN-->
+      <!-- Prueba Tarjeta 2.2 FIN -->
+  
+
+     <!-- Prueba Tarjeta 2.3-->
+     <div class="card flex-card tarjeta-borde-agua">     <!-- tarjeta 1.3 -->
+      <div class="grid-tarjeta flex-tarjeta-item "> 
+        
+        <div class="div-ind-num-valor "> 
+           <span id="valor-ind-XX" data-id="ind-XX" class="valor-num fte-color-dark">
+            2.1                                
+          </span>
+        </div>
+
+        <div class="div-ind-nombre " > 
+          <span id="nombre-ind-XX" class="nombre-indicador fte-color-nombre-cl">    
+            Turbidez
+            <small>(UNF)</small>
+          </span>
+        </div>
+
+        <div class="div-ind-fecha "> 
+          <span class="valor-fechaAct fte-color-aviso">18/05/2024</span>
+        </div>
+
+        <div class="div-boton-izda "> 
+          <button id="btnMas-ind-XX" name="btn-ind-3-mas" class="boton-1 ">
+            <img src="../assets/icons/icon-flecha-down.svg" alt="+" class = "icono-masmenos" />
+          </button>
+        </div>
+        <div class="div-boton-dcha ">
+          <button id="btnMinus-id-" name="btn" class="boton-1">
+            <img src="../assets/icons/icon-flecha-up.svg" alt="-" class = "icono-masmenos" />
+          </button>
+
+        </div>
+      </div> 
+    </div>    <!-- tarjeta 2.3 FIN-->
+    <!-- Prueba Tarjeta 2.3 FIN -->
+
+     <!-- Prueba Tarjeta 2.4-->
+     <div class="card flex-card tarjeta-borde-agua">     <!-- tarjeta 2.4 -->
+      <div class="grid-tarjeta flex-tarjeta-item "> 
+        
+        <div class="div-ind-num-valor "> 
+          <span id="valor-ind-XX" data-id="ind-XX" class="valor-num fte-color-dark">
+            5.1                                
+          </span>
+        </div>
+
+        <div class="div-ind-nombre " > 
+          <span id="nombre-ind-XX" class="nombre-indicador fte-color-nombre-cl">    
+            Ph
+            <small>(Unidades de Ph)</small>
+          </span>
+        </div>
+
+        <div class="div-ind-fecha "> 
+          <span class="valor-fechaAct fte-color-aviso">18/05/2024</span>
+        </div>
+
+        <div class="div-boton-izda "> 
+          <button id="btnMas-ind-XX" name="btn-ind-3-mas" class="boton-1 ">
+            <img src="../assets/icons/icon-flecha-down.svg" alt="+" class = "icono-masmenos" />
+          </button>
+        </div>
+        <div class="div-boton-dcha ">
+          <button id="btnMinus-id-" name="btn" class="boton-1">
+            <img src="../assets/icons/icon-flecha-up.svg" alt="-" class = "icono-masmenos" />
+          </button>
+
+        </div>
+      </div> 
+    </div>    <!-- tarjeta 2.4 FIN-->
+    <!-- Prueba Tarjeta 2.4 FIN -->
+     <!-- Prueba Tarjeta 2.5-->
+     <div class="card flex-card tarjeta-borde-agua">     <!-- tarjeta 2.5 -->
+      <div class="grid-tarjeta flex-tarjeta-item "> 
+        
+        <div class="div-ind-num-valor "> 
+           <span id="valor-ind-XX" data-id="ind-XX" class="valor-num fte-color-dark">
+            122.1                                
+          </span>
+        </div>
+
+        <div class="div-ind-nombre " > 
+          <span id="nombre-ind-XX" class="nombre-indicador fte-color-nombre-cl">    
+            Transparencia
+            <small>(x)</small>
+          </span>
+        </div>
+
+        <div class="div-ind-fecha "> 
+          <span class="valor-fechaAct fte-color-aviso">18/05/2024</span>
+        </div>
+
+        <div class="div-boton-izda "> 
+          <button id="btnMas-ind-XX" name="btn-ind-3-mas" class="boton-1 ">
+            <img src="../assets/icons/icon-flecha-down.svg" alt="+" class = "icono-masmenos" />
+          </button>
+        </div>
+        <div class="div-boton-dcha ">
+          <button id="btnMinus-id-" name="btn" class="boton-1">
+            <img src="../assets/icons/icon-flecha-up.svg" alt="-" class = "icono-masmenos" />
+          </button>
+        </div>
+      </div> 
+      
+    </div>    <!-- tarjeta 2.5 FIN-->
+    <!-- Prueba Tarjeta 2.5 FIN -->
+     <!-- Prueba Tarjeta 2.6-->
+     <div class="card flex-card tarjeta-borde-agua">     <!-- tarjeta 2.6 -->
+        <div class="grid-tarjeta flex-tarjeta-item "> 
+        
+            <div class="div-ind-num-valor "> 
+            <span id="valor-ind-XX" data-id="ind-XX" class="valor-hora fte-color-dark">
+                01:30                                
+            </span>
+            </div>
+
+            <div class="div-ind-nombre " > 
+            <span id="nombre-ind-XX" class="nombre-indicador fte-color-nombre-cl">    
+                Tiempo recirculación
+                <small>(hh:mm)</small>
+            </span>
+            </div>
+
+            <div class="div-ind-fecha "> 
+            <span class="valor-fechaAct fte-color-aviso">18/05/2024</span>
+            </div>
+
+            <div class="div-boton-izda "> 
+                <button id="btnMas-ind-XX" name="btn-ind-3-mas" class="boton-1 ">
+                    <img src="../assets/icons/icon-flecha-down.svg" alt="+" class = "icono-masmenos" />
+                </button>
+            </div>
+            <div class="div-boton-dcha ">
+                <button id="btnMinus-id-" name="btn" class="boton-1">
+                    <img src="../assets/icons/icon-flecha-up.svg" alt="-" class = "icono-masmenos" />
+                </button>
+            </div>
+        </div> 
+
+    </div>    <!-- tarjeta 2.6 FIN-->
+    <!-- Prueba Tarjeta 2.6 FIN -->
+     <!-- Prueba Tarjeta 2.7-->
+     <div class="card flex-card tarjeta-borde-agua">     <!-- tarjeta 2.7 -->
+      <div class="grid-tarjeta flex-tarjeta-item "> 
+        
+        <div class="div-ind-txt-valor "> 
+          <!-- <span id="valor-ind-XX" data-id="ind-XX" class="valor-texto">
+            Hipoclorito sódico                                
+          </span> -->
+          <label for="fname" class="nombre-indicador" >Desinfectante:</label>
+          <input  data-id="idIndicador" type="text" class="input-obs2"  />
+        </div>
+
+        <!-- <div class="div-ind-nombre " > 
+          <span id="nombre-ind-XX" class="nombre-indicador">    
+            Desinfectante
+          </span>
+        </div> -->
+
+        <div class="div-ind-fecha "> 
+          <span class="valor-fechaAct fte-color-aviso">18/05/2024</span>
+        </div>
+        
+      </div> 
+    </div>    <!-- tarjeta 2.7 FIN-->
+    <!-- Prueba Tarjeta 2.7 FIN -->
+
+
+
+  </div>    <!-- Contenedor 2 FIN -->
+
+
+
+   <!-- contenedor-grupo 3 ${ grupo.id} -->
+   <div>
+    <img src="../assets/icons/icon-grupo03.svg" alt="Aire" class="img-texto-medio"/>
+    <span class="nombre-grupo">Observaciones </span>
+  </div>
+  <div data-id="gru-XX" class="container-cards GRUPO-ID}">
+   
+     <!-- Prueba Tarjeta 3.1-->
+     <div class="card flex-card tarjeta-borde-obs">     <!-- tarjeta 3.1 -->
+      <div class="grid-tarjeta flex-tarjeta-item "> 
+        
+        <div class="div-ind-txt-valor "> 
+            <input class="input-obs2"  />
+        </div>
+        
+        <!-- <div class="div-ind-nombre " > 
+          <span id="nombre-ind-XX" class="nombre-indicador">    
+            Notas
+          </span>
+        </div> -->
+       
+        <div class="div-ind-fecha "> 
+          <span class="valor-fechaAct fte-color-aviso">18/05/2024</span>
+        </div>
+      </div> 
+    </div>    <!-- tarjeta 3.1 FIN-->
+    <!-- Prueba Tarjeta 3.1 FIN -->
+
+
+
+  </div>    <!-- Contenedor 3 FIN -->
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <!-- contenedor-grupo 3 -->
+  <div>
+    <img src="../assets/icons/info_40dp_FILL0_wght400_GRAD0_opsz40.svg" alt="Aire" class="img-texto-medio"/>
+    <span class="nombre-grupo"> Observaciones</span>
+  </div>
+  <div class="container-cards">
+ 
+    <div class="card flex-card tarjeta-borde-blanco">     <!-- tarjeta 3.1 -->
+      <div class="card-body tipo-texto">
+        
+        <span class="valor-texto">
+          Notas
+        </span>
+      </div>
+      <div class="card-header">
+        <span class="nombre-indicador">
+        
+        </span>
+        <small></small>
+      </div>
+        <p></p>
+    </div>    <!-- tarjeta 3.1 FIN-->
+      
+  </div>    Contenedor 3 FIN
+
 
 
 </div>        <!-- PANEL fin -->

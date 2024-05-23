@@ -45,19 +45,19 @@ export const selectClaseCSSByTipo = ( tipo ) => {
     
     switch (tipo) {
         case TiposInd.Numero:
-            clasesCSS = ['valor-num', 'div-ind-num-valor'];
+            clasesCSS = 'div-ind-num-valor';
             break;
 
         case TiposInd.Horas:
-            clasesCSS = ['valor-hora', 'div-ind-num-valor'];
+            clasesCSS = 'div-ind-num-valor';
             break;
 
         case TiposInd.Texto:
-            clasesCSS = ['valor-texto', 'div-ind-txt-valor'];
+            clasesCSS = 'div-ind-txt-valor';
             break;
         
         default:
-            clasesCSS = ['valor-texto', 'div-ind-txt-valor'];
+            clasesCSS = 'div-ind-txt-valor';
             break;
     }
 
@@ -77,9 +77,9 @@ export const selectClaseCSSTemaDark = ( dark = true ) => {
     let claseCSS = '';
 
     if (dark) {
-        claseCSS = 'fondo-card-dark';
+        claseCSS = 'tema-oscuro';
     } else {
-        claseCSS = 'fondo-card-claro';
+        claseCSS = 'tema-claro';
     };
 
 

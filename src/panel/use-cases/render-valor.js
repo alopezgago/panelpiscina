@@ -11,7 +11,7 @@ let spanFechaHTML;
  * @param {String} elementId 
  * @param {Indicador} indicador indicador del que tomaremos el valor 
  */
-export const renderSpanValor = ( elementId, indicador ) => {
+export const renderValor = ( elementId, indicador ) => {
     if (!spanValorHTML) { 
         spanValorHTML = document.getElementById( `valor-${ elementId }`);
         spanFechaHTML = document.getElementById( `fechaAct-${ elementId }`);
